@@ -31,28 +31,44 @@ export class ProcessManager {
       return { success: false, error: 'Game install directory not found' };
     }
 
-    // Look for .exe or .bat
-    const items = fs.readdirSync(installed.installPath);
-    let exeFile = items.find((i) => i.endsWith('.exe') || i.endsWith('.bat'));
-    
-    if (!exeFile) {
-      return { success: false, error: 'No executable found in game directory' };
+    // Resolve Executable Path
+    let targetExePath: string | null = null;
+
+    // Method 1: Check configured executable path from metadata (e.g. "Drag'n Wash/DragNWash.exe")
+    if (installed.executable) {
+      const explicitPath = path.join(installed.installPath, installed.executable);
+      if (fs.existsSync(explicitPath) && fs.statSync(explicitPath).isFile()) {
+        targetExePath = explicitPath;
+      }
     }
 
-    const exePath = path.join(installed.installPath, exeFile);
+    // Method 2: Recursive search for any .exe or .bat file inside installed directory
+    if (!targetExePath) {
+      targetExePath = this.findExecutableRecursive(installed.installPath);
+    }
+
+    if (!targetExePath || !fs.existsSync(targetExePath)) {
+      return {
+        success: false,
+        error: `Could not find executable in "${installed.installPath}". Please check game folder structure.`,
+      };
+    }
+
+    const gameCwd = path.dirname(targetExePath);
+    const exeFileName = path.basename(targetExePath);
 
     try {
       let proc: ChildProcess;
 
-      if (process.platform === 'win32' && exeFile.endsWith('.bat')) {
-        proc = spawn('cmd.exe', ['/c', exePath], {
-          cwd: installed.installPath,
+      if (process.platform === 'win32' && exeFileName.endsWith('.bat')) {
+        proc = spawn('cmd.exe', ['/c', targetExePath], {
+          cwd: gameCwd,
           detached: false,
           stdio: 'ignore',
         });
       } else {
-        proc = spawn(exePath, [], {
-          cwd: installed.installPath,
+        proc = spawn(targetExePath, [], {
+          cwd: gameCwd,
           detached: false,
           stdio: 'ignore',
         });
@@ -73,7 +89,7 @@ export class ProcessManager {
         startedAt: installed.lastPlayed,
       });
 
-      // Handle launcher settings (minimize / close on launch)
+      // Handle launcher window preferences
       const settings = this.storageManager.getSettings();
       const mainWin = this.mainWindowProvider();
       if (mainWin && !mainWin.isDestroyed()) {
@@ -112,6 +128,40 @@ export class ProcessManager {
       console.error(`Failed to spawn game ${gameId}:`, err);
       return { success: false, error: err.message || 'Failed to start process' };
     }
+  }
+
+  private findExecutableRecursive(dirPath: string): string | null {
+    if (!fs.existsSync(dirPath)) return null;
+
+    try {
+      const items = fs.readdirSync(dirPath);
+
+      // Check files in current directory first
+      for (const item of items) {
+        const fullPath = path.join(dirPath, item);
+        const stat = fs.statSync(fullPath);
+        if (stat.isFile() && (item.endsWith('.exe') || item.endsWith('.bat'))) {
+          // Ignore uninstaller binaries
+          if (!item.toLowerCase().includes('unins') && !item.toLowerCase().includes('setup')) {
+            return fullPath;
+          }
+        }
+      }
+
+      // Check subdirectories
+      for (const item of items) {
+        const fullPath = path.join(dirPath, item);
+        const stat = fs.statSync(fullPath);
+        if (stat.isDirectory()) {
+          const found = this.findExecutableRecursive(fullPath);
+          if (found) return found;
+        }
+      }
+    } catch (e) {
+      console.warn('Error during recursive executable search:', e);
+    }
+
+    return null;
   }
 
   public isGameRunning(gameId: string): boolean {

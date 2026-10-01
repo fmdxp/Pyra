@@ -52,6 +52,7 @@ export class InstallManager {
       lastPlayed: null,
       playTimeMinutes: 0,
       sizeOnDisk,
+      executable,
     };
 
     // Save metadata in installed.json

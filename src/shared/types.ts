@@ -27,6 +27,7 @@ export interface InstalledGame {
   lastPlayed: string | null; // ISO date or null
   playTimeMinutes: number;
   sizeOnDisk: number;
+  executable?: string;
 }
 
 export type DownloadStatus =
