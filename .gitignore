@@ -57,3 +57,8 @@ Desktop.ini
 
 # TypeScript Cache
 *.tsbuildinfo
+
+# Local Release Notes
+RELEASE_v1.0.0.md
+RELEASE_*.md
+
