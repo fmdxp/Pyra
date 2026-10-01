@@ -1,0 +1,143 @@
+PYRA LAUNCHER — SOURCE-AVAILABLE & COMMUNITY LICENSE
+Copyright (c) 2026 fmdxp. All rights reserved.
+
+================================================================================
+                                PREAMBLE
+================================================================================
+
+The Pyra Launcher ("Software") is an open-development, source-available desktop
+game management platform created by fmdxp ("Copyright Holder").
+
+This License establishes a formal framework that encourages community participation,
+source code transparency, bug reporting, and collaborative feature development,
+while safeguarding the integrity of official project distributions, backend services,
+and end-user security.
+
+By accessing, cloning, compiling, installing, or contributing to this Software,
+you accept and agree to be bound by the terms of this License.
+
+================================================================================
+                           TERMS AND CONDITIONS
+================================================================================
+
+1. OWNERSHIP AND LICENSE GRANT
+--------------------------------------------------------------------------------
+1.1 Ownership: All rights, title, and interest in and to the Software—including
+    its architecture, source code, visual assets, documentation, and original design
+    remain the exclusive property of the Copyright Holder.
+
+1.2 Personal Execution Grant: Subject to compliance with this License, the Copyright
+    Holder grants you a non-exclusive, non-transferable, royalty-free license to
+    download, install, and execute official compiled builds of the Software for
+    personal, non-commercial use.
+
+1.3 Source Access & Study Grant: You are granted the right to inspect, view, compile,
+    and study the source code for personal educational research, security auditing,
+    and developmental testing.
+
+1.4 Development Forking Grant: You are permitted to fork the repository on GitHub
+    solely for the purpose of developing fixes, enhancements, catalog additions, or
+    features intended to be submitted as Pull Requests to the official repository.
+
+    Explanatory Note: This section guarantees that anyone can use Pyra freely for
+    gaming and study the codebase, while keeping development efforts centralized
+    and collaborative around the official project.
+
+
+2. DISTRIBUTION AND PACKAGING BOUNDARIES
+--------------------------------------------------------------------------------
+2.1 Official Channel Integrity: Redistribution, re-uploading, mirroring, repackaging,
+    or re-hosting of the Software (whether in source form, modified form, or compiled
+    installers) on third-party platforms, download portals, or app stores without
+    prior written consent from the Copyright Holder is strictly prohibited.
+
+2.2 Distribution Channels: Official releases, installers, and updates shall be
+    published exclusively through the official project repository and designated
+    channels managed by the Copyright Holder.
+
+    Explanatory Note: This boundary protects players from downloading unauthorized,
+    tampered, or outdated builds containing potential security risks or malware,
+    ensuring everyone receives authentic Pyra releases.
+
+
+3. BACKEND INFRASTRUCTURE AND CATALOG GOVERNANCE
+--------------------------------------------------------------------------------
+3.1 Scope of Backend Governance: The `backend/` directory—comprising serverless API
+    handlers (`backend/api/catalog.ts`), production catalog metadata (`backend/api/catalog.json`),
+    deployment manifests (`backend/vercel.json`), and related service code is governed
+    under single-maintainer administration by the Copyright Holder.
+
+3.2 Production Deployment Rights: The deployment, hosting, operation, and production
+    management of the catalog API service are reserved exclusively to the Copyright
+    Holder. Third parties may not host, operate, or deploy public instances of the
+    Pyra backend API or catalog server.
+
+3.3 Community Catalog Proposals: Community members are warmly encouraged to propose
+    new game listings, metadata updates, or catalog enhancements by submitting Pull
+    Requests to `backend/api/catalog.json` or opening Issue requests in the official
+    repository.
+
+    Explanatory Note: Maintaining a single production backend ensures game metadata
+    accuracy, verified CDN download sources, and download safety for all users,
+    preventing fragmented or malicious catalog servers while empowering the community
+    to contribute new games via official PRs.
+
+
+4. DERIVATIVE WORKS AND COMMERCIAL RESTRICTIONS
+--------------------------------------------------------------------------------
+4.1 Non-Commercial Usage: The Software, its source code, and its underlying assets
+    may not be used, monetized, sold, licensed, or incorporated into commercial
+    products or services without prior written permission.
+
+4.2 Standalone Clones & Competing Derivatives: You may not use the Software's source
+    code, design elements, or branding to create standalone competing products,
+    rebranded commercial launchers, or derivative remakes intended for independent
+    public distribution.
+
+    Explanatory Note: This restriction ensures that Pyra remains a unified, high-quality
+    community project and prevents commercial entities from appropriating open
+    community work for profit under a different name.
+
+
+5. COMMUNITY CONTRIBUTIONS
+--------------------------------------------------------------------------------
+5.1 Contribution Licensing: By submitting a Pull Request, issue fix, or catalog update
+    to the official repository, you grant the Copyright Holder a perpetual, worldwide,
+    non-exclusive, royalty-free right to incorporate, modify, publish, and distribute
+    your contribution as part of the Software under this License.
+
+5.2 Authorship Attribution: Contributors retain authorship credit for their submitted
+    code, which will be preserved in the Git version control history and repository
+    contributor lists.
+
+
+6. TRADEMARKS AND BRANDING
+--------------------------------------------------------------------------------
+6.1 Trademark Reservation: The project name "Pyra", the Pyra logo, custom application
+    icons, visual theme elements, and associated branding are reserved trademarks of
+    the Copyright Holder.
+
+6.2 Endorsement Restrictions: Nothing in this License grants permission to use the
+    Pyra trademarks to imply endorsement, sponsorship, or official affiliation without
+    prior written consent.
+
+
+7. DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+7.1 Warranty Disclaimer: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+7.2 Limitation of Liability: IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+    LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE
+    USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+================================================================================
+                         OFFICIAL PROJECT REPOSITORY
+================================================================================
+
+For inquiries, permissions, or contribution guidelines, visit the official repository:
+https://github.com/fmdxp/Pyra
+
+© 2026 fmdxp. All rights reserved.
