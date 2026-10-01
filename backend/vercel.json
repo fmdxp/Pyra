@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "api/catalog.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["api/catalog.json"]
+      }
     }
   ],
   "routes": [
