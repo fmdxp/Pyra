@@ -81,14 +81,28 @@ export const GameDetailPage: React.FC = () => {
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       {/* Cinematic Hero Header */}
       <div className="hero-banner" style={{ height: 420 }}>
-        <img className="hero-bg" src={selectedGame.banner} alt={selectedGame.name} />
+        <img
+          className="hero-bg"
+          src={selectedGame.banner || selectedGame.icon}
+          alt={selectedGame.name}
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src =
+              'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="%230e111a"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b5cf6" font-family="sans-serif" font-weight="bold" font-size="48">PYRA GAME BANNER</text></svg>';
+          }}
+        />
         <div className="hero-overlay" />
         <div className="hero-content" style={{ maxWidth: 700 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
             <img
               src={selectedGame.icon}
               alt={selectedGame.name}
+              referrerPolicy="no-referrer"
               style={{ width: 64, height: 64, borderRadius: 'var(--radius-md)', objectFit: 'cover' }}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%237c3aed"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23ffffff" font-family="sans-serif" font-weight="bold" font-size="24">P</text></svg>';
+              }}
             />
             <div>
               <h1 className="hero-title" style={{ fontSize: '2.5rem' }}>{selectedGame.name}</h1>
@@ -217,6 +231,7 @@ export const GameDetailPage: React.FC = () => {
                     key={idx}
                     src={shot}
                     alt={`Screenshot ${idx + 1}`}
+                    referrerPolicy="no-referrer"
                     style={{
                       width: '100%',
                       height: 120,
@@ -227,6 +242,10 @@ export const GameDetailPage: React.FC = () => {
                       transition: 'transform 0.3s ease',
                     }}
                     onClick={() => setActiveScreenshot(shot)}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="225" viewBox="0 0 400 225"><rect width="400" height="225" fill="%23161b26"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b5cf6" font-family="sans-serif" font-size="16">SCREENSHOT PREVIEW</text></svg>';
+                    }}
                   />
                 ))}
               </div>

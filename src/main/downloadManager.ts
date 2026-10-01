@@ -80,7 +80,7 @@ export class DownloadManager {
     };
 
     this.activeDownloads.set(game.id, task);
-    this.executeDownload(task, 0);
+    this.executeDownload(task, 0, game.downloadUrl, 0);
   }
 
   public pauseDownload(gameId: string): void {
@@ -116,7 +116,7 @@ export class DownloadManager {
     task.lastSpeedCheckBytes = existingSize;
     task.lastSpeedCheckTime = Date.now();
 
-    this.executeDownload(task, existingSize);
+    this.executeDownload(task, existingSize, task.game.downloadUrl, 0);
   }
 
   public cancelDownload(gameId: string): void {
@@ -147,28 +147,65 @@ export class DownloadManager {
     return Array.from(this.activeDownloads.values()).map((t) => t.item);
   }
 
-  private executeDownload(task: InternalDownloadTask, offsetBytes: number) {
+  private executeDownload(
+    task: InternalDownloadTask,
+    offsetBytes: number,
+    targetUrlStr: string,
+    redirectCount: number = 0
+  ) {
+    if (redirectCount > 10) {
+      task.item.status = 'error';
+      task.item.error = 'Too many HTTP redirects';
+      this.notifyProgress(task.item);
+      return;
+    }
+
     let url: URL;
     try {
-      url = new URL(task.game.downloadUrl);
+      url = new URL(targetUrlStr);
       if (url.protocol !== 'https:' && url.protocol !== 'http:') {
         throw new Error(`Unsupported protocol: ${url.protocol}`);
       }
     } catch (err: any) {
       task.item.status = 'error';
-      task.item.error = `Security Error: ${err.message}`;
+      task.item.error = `Invalid URL: ${err.message}`;
       this.notifyProgress(task.item);
       return;
     }
 
     const client = url.protocol === 'https:' ? https : http;
 
-    const headers: Record<string, string> = {};
+    const headers: Record<string, string> = {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) PyraLauncher/1.0',
+      'Accept': '*/*',
+    };
+
     if (offsetBytes > 0) {
       headers['Range'] = `bytes=${offsetBytes}-`;
     }
 
     const req = client.get(url, { headers }, (res) => {
+      // Handle HTTP 301, 302, 303, 307, 308 Redirects (Crucial for GitHub Releases, Cloudflare R2, AWS S3!)
+      if (
+        res.statusCode === 301 ||
+        res.statusCode === 302 ||
+        res.statusCode === 303 ||
+        res.statusCode === 307 ||
+        res.statusCode === 308
+      ) {
+        const redirectLocation = res.headers.location;
+        if (!redirectLocation) {
+          task.item.status = 'error';
+          task.item.error = `HTTP Redirect ${res.statusCode} missing Location header`;
+          this.notifyProgress(task.item);
+          return;
+        }
+
+        const nextUrl = new URL(redirectLocation, url).toString();
+        this.executeDownload(task, offsetBytes, nextUrl, redirectCount + 1);
+        return;
+      }
+
       if (res.statusCode !== 200 && res.statusCode !== 206) {
         task.item.status = 'error';
         task.item.error = `HTTP Error ${res.statusCode}`;
@@ -248,7 +285,6 @@ export class DownloadManager {
       task.item.progressPercent = 100;
       this.notifyProgress(task.item);
 
-      // Clean from active list after 2 seconds
       setTimeout(() => {
         this.activeDownloads.delete(task.game.id);
       }, 2000);

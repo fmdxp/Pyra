@@ -38,7 +38,16 @@ export const GameCard: React.FC<GameCardProps> = ({ game }) => {
   return (
     <div className="game-card" onClick={handleCardClick}>
       <div className="game-card-thumb">
-        <img src={game.banner || game.icon} alt={game.name} loading="lazy" />
+        <img
+          src={game.banner || game.icon}
+          alt={game.name}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src =
+              'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23161b26"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b5cf6" font-family="sans-serif" font-weight="bold" font-size="20">PYRA GAME</text></svg>';
+          }}
+        />
         {isInstalled && !hasUpdate && <span className="game-card-badge badge-installed">INSTALLED</span>}
         {hasUpdate && <span className="game-card-badge badge-update">UPDATE</span>}
       </div>
