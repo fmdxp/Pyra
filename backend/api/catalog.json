@@ -1,76 +1,28 @@
 {
   "games": [
     {
-      "id": "neon-drift",
-      "name": "Neon Drift: Overdrive",
-      "version": "1.2.0",
-      "description": "Blaze through a synthwave-soaked cyberpunk metropolis at breakneck speeds. Neon Drift: Overdrive blends high-octane arcade racing with deep vehicle customization and electronic soundtrack vibes.",
-      "shortDescription": "Cyberpunk arcade racing action in a neon-drenched metropolis.",
-      "genre": "Racing / Action",
-      "developer": "HyperDrive Studios",
-      "publisher": "Pyra Interactive",
-      "releaseDate": "2025-11-14",
-      "icon": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=400&fit=crop&auto=format",
-      "banner": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&h=900&fit=crop&auto=format",
+      "id": "dragn-wash",
+      "name": "Drag'n Wash",
+      "version": "1.0.0",
+      "description": "Enjoy a narrative involving 3 male dragons. Wash them, chat with them, touch them, and more! A 3D dragon washing experience.",
+      "shortDescription": "A 3D dragon washing experience.",
+      "genre": "Casual / Indie / Simulation",
+      "developer": "Gator Dragon Games",
+      "publisher": "Gator Dragon Games",
+      "releaseDate": "2026-09-10",
+      "icon": "https://img.itch.zone/aW1nLzI5ODQ2Mzc1LnBuZw==/315x250%23c/0TZA5g.png?w=400&h=400&fit=crop&auto=format",
+      "banner": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739660/e837f81aebb36b458512fa562a322c218dde1f7c/header.jpg?t=1789341978?w=1600&h=900&fit=crop&auto=format",
       "screenshots": [
-        "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=675&fit=crop&auto=format",
-        "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&h=675&fit=crop&auto=format",
-        "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&h=675&fit=crop&auto=format"
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4739660/a5e5758e586579304fb384b19748a1a9cad523e7/ss_a5e5758e586579304fb384b19748a1a9cad523e7.1920x1080.jpg?t=1789341978?w=1200&h=675&fit=crop&auto=format",
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4739660/2ddd4ed56c784c9c1cce20464eb033682f17bfd9/ss_2ddd4ed56c784c9c1cce20464eb033682f17bfd9.1920x1080.jpg?t=1789341978?w=1200&h=675&fit=crop&auto=format",
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4739660/cd80d36a37c069add9ad451a4a62cd78e8258682/ss_cd80d36a37c069add9ad451a4a62cd78e8258682.1920x1080.jpg?t=1789341978?w=1200&h=675&fit=crop&auto=format"
       ],
-      "downloadUrl": "https://raw.githubusercontent.com/pyra-launcher/assets/main/archives/neon-drift-1.2.0.zip",
-      "size": 15728640,
-      "executable": "NeonDrift.exe",
+      "downloadUrl": "https://github.com/fmdxp/Pyra/releases/download/Drag'nWash/Drag.nWash-1.0.0.zip",
+      "size": 388129,
+      "executable": "Drag'n Wash/DragNWash.exe",
       "featured": true,
       "rating": 4.9,
-      "tags": ["Synthwave", "High Speed", "Multiplayer", "Controller Support"]
-    },
-    {
-      "id": "starfall-protocol",
-      "name": "Starfall Protocol",
-      "version": "1.0.4",
-      "description": "Command tactical squads across uncharted planetary outposts in Starfall Protocol. Engage in deep tactical combat, research alien technologies, and defend orbital outposts from cosmic threats.",
-      "shortDescription": "Sci-Fi tactical squad warfare across dangerous alien worlds.",
-      "genre": "Strategy / Tactical",
-      "developer": "Orbital Dynamics",
-      "publisher": "Pyra Interactive",
-      "releaseDate": "2026-02-20",
-      "icon": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop&auto=format",
-      "banner": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600&h=900&fit=crop&auto=format",
-      "screenshots": [
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&h=675&fit=crop&auto=format",
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=675&fit=crop&auto=format",
-        "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1200&h=675&fit=crop&auto=format"
-      ],
-      "downloadUrl": "https://raw.githubusercontent.com/pyra-launcher/assets/main/archives/starfall-protocol-1.0.4.zip",
-      "size": 15728640,
-      "executable": "StarfallProtocol.exe",
-      "featured": true,
-      "rating": 4.8,
-      "tags": ["Sci-Fi", "Tactical", "Turn-Based", "Base Building"]
-    },
-    {
-      "id": "ember-valley",
-      "name": "Ember Valley",
-      "version": "2.1.0",
-      "description": "Uncover ancient elemental mysteries in an immense open-world RPG. Harness fire, ice, and lightning magic as you battle mythical beasts and restore balance to the shattered realm of Ember Valley.",
-      "shortDescription": "An epic open-world fantasy RPG brimming with magic and exploration.",
-      "genre": "Action RPG / Open World",
-      "developer": "Aetheria Games",
-      "publisher": "Pyra Interactive",
-      "releaseDate": "2025-08-05",
-      "icon": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=400&h=400&fit=crop&auto=format",
-      "banner": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600&h=900&fit=crop&auto=format",
-      "screenshots": [
-        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&h=675&fit=crop&auto=format",
-        "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&h=675&fit=crop&auto=format",
-        "https://images.unsplash.com/photo-1563089145-599997674d42?w=1200&h=675&fit=crop&auto=format"
-      ],
-      "downloadUrl": "https://raw.githubusercontent.com/pyra-launcher/assets/main/archives/ember-valley-2.1.0.zip",
-      "size": 15728640,
-      "executable": "EmberValley.exe",
-      "featured": false,
-      "rating": 4.7,
-      "tags": ["Fantasy", "Open World", "Crafting", "Story Rich"]
+      "tags": ["Casual", "Indie", "Simulation", "NSFW"]
     }
   ]
 }
