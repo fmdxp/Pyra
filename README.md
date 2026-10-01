@@ -26,16 +26,16 @@
 
 ### Key Features
 
-- 🏠 **Home** — Cinematic hero spotlight with featured games and recently played titles.
-- 🛒 **Store** — Browse the full game catalog with search, genre filters, and sorting.
-- 🎮 **Game Details** — Cinematic game pages with screenshots, metadata, and action controls.
-- 📚 **Library** — View and launch all installed games at a glance.
-- ⬇️ **Downloads** — Real-time download manager with progress, speed (MB/s), ETA, pause, resume, and cancel.
-- ⚙️ **Settings** — Configure install location, bandwidth limits, launch behavior, and storage analytics.
-- 🔄 **Updates** — Automatic version detection with one-click game updates.
-- 🗑️ **Uninstall** — Safe removal of game files with confirmation dialogs.
-- 🌐 **Offline Mode** — Launch installed games and browse cached catalog data without internet.
-- 🔒 **Security** — Electron contextIsolation, secure IPC bridge, Zip Slip prevention, HTTPS-only downloads, and URL validation.
+- 🏠 **Home** - Cinematic hero spotlight with featured games and recently played titles.
+- 🛒 **Store** - Browse the full game catalog with search, genre filters, and sorting.
+- 🎮 **Game Details** - Cinematic game pages with screenshots, metadata, and action controls.
+- 📚 **Library** - View and launch all installed games at a glance.
+- ⬇️ **Downloads** - Real-time download manager with progress, speed (MB/s), ETA, pause, resume, and cancel.
+- ⚙️ **Settings** - Configure install location, bandwidth limits, launch behavior, and storage analytics.
+- 🔄 **Updates** - Automatic version detection with one-click game updates.
+- 🗑️ **Uninstall** - Safe removal of game files with confirmation dialogs.
+- 🌐 **Offline Mode** - Launch installed games and browse cached catalog data without internet.
+- 🔒 **Security** - Electron contextIsolation, secure IPC bridge, Zip Slip prevention, HTTPS-only downloads, and URL validation.
 
 ---
 
