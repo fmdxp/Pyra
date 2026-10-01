@@ -6,13 +6,15 @@
     "output": "dist-electron"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "public/**/*"
   ],
   "win": {
     "target": [
       "nsis",
       "portable"
     ],
+    "icon": "public/icon.ico",
     "requestedExecutionLevel": "asInvoker"
   },
   "nsis": {
@@ -20,6 +22,8 @@
     "allowToChangeInstallationDirectory": true,
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "Pyra"
+    "shortcutName": "Pyra",
+    "installerIcon": "public/icon.ico",
+    "uninstallerIcon": "public/icon.ico"
   }
 }
