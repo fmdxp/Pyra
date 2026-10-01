@@ -1,0 +1,15 @@
+# CODEOWNERS file for Pyra Launcher
+# Ensures critical paths require explicit approval from @fmdxp
+
+# Default owner for everything
+* @fmdxp
+
+# Critical Backend & Game Catalog governance
+/backend/ @fmdxp
+/backend/api/ @fmdxp
+/backend/api/catalog.json @fmdxp
+
+# Security & Main Process configuration
+/src/main/ @fmdxp
+/src/preload/ @fmdxp
+/electron-builder.json @fmdxp
