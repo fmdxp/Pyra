@@ -82,7 +82,7 @@
       "developer": "DarkStone Digital",
       "publisher": "DreadXP",
       "releaseDate": "2022-08-02",
-      "icon": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1295920/header.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1295920/library_600x900.jpg",
       "banner": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1295920/header.jpg",
       "screenshots": [
         "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1295920/ss_95f294e3b2b43cf5c8f9765e51c0953663c30ad6.1920x1080.jpg",
@@ -106,10 +106,10 @@
       "developer": "Endnight Games Ltd",
       "publisher": "Endnight Games Ltd",
       "releaseDate": "2018-04-30",
-      "icon": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/header.jpg",
+      "icon": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/library_600x900.jpg",
       "banner": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/header.jpg",
       "screenshots": [
-        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/ss_8ccb821c4df3fafdf4161d77f38635441a8157f2.1920x1080.jpg",
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/ss_8ccb821c4df3fafdf4161d77f38635441a8157f2.1920x1080.jpg",
         "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/ss_53c615d49c4777144ed7359e4bf7c9eb6838cc8e.1920x1080.jpg",
         "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/ss_772eebf0ce7bdb51546055a36185e8ee46e8acac.1920x1080.jpg"
       ],
@@ -119,6 +119,54 @@
       "featured": true,
       "rating": 4.8,
       "tags": ["Survival", "Open World", "Horror", "Crafting", "Co-op"]
+    },
+    {
+      "id": "rv-there-yet",
+      "name": "RV There Yet?",
+      "version": "1.2.17120",
+      "description": "A co-op adventure about driving your Recreational Vehicle home. Drive together through challenging terrain, navigate winding roads, maintain the vehicle, and try to make it home in one piece.",
+      "shortDescription": "A physics-based co-op adventure about driving your RV home.",
+      "genre": "Action / Adventure / Indie",
+      "developer": "Nuggets Entertainment",
+      "publisher": "Nuggets Entertainment",
+      "releaseDate": "2025-10-21",
+      "icon": "https://cdn2.steamgriddb.com/thumb/c4bfdbf5d681adb59ac1250518ac7c3d.jpg",
+      "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3949040/cae24b4ed7f4531be51f0d63f785b7d253f92dc3/header.jpg",
+      "screenshots": [
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949040/ed2f7080c6622688a72a86ca85af600f2a2bdfb9/ss_ed2f7080c6622688a72a86ca85af600f2a2bdfb9.1920x1080.jpg",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949040/7d246f94e4ec2ff4c7be3ded82bcdd558274d7c7/ss_7d246f94e4ec2ff4c7be3ded82bcdd558274d7c7.1920x1080.jpg",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949040/f5663e0220e188d4c9db0789f0cbb4ddefd762d5/ss_f5663e0220e188d4c9db0789f0cbb4ddefd762d5.1920x1080.jpg"
+      ],
+      "downloadUrl": "https://archive.org/download/rv-there-yet-v-1.2.17120/RV-There-Yet-v1.2.17120.zip",
+      "size": 2915173971,
+      "executable": "Ride/Ride.exe",
+      "featured": true,
+      "rating": 4.8,
+      "tags": ["Co-op", "Adventure", "Physics", "Driving", "Indie"]
+    },
+    {
+      "id": "subnautica",
+      "name": "Subnautica",
+      "version": "71137",
+      "description": "Descend into the depths of an alien underwater world filled with wonder and peril. Craft equipment, pilot submarines and out-smart wildlife to explore lush coral reefs, volcanoes, cave systems, and more - all while trying to survive.",
+      "shortDescription": "Explore and survive in an alien underwater world.",
+      "genre": "Adventure / Indie / Survival",
+      "developer": "Unknown Worlds Entertainment",
+      "publisher": "Unknown Worlds Entertainment",
+      "releaseDate": "2018-01-23",
+      "icon": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/264710/library_600x900.jpg",
+      "banner": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/header.jpg",
+      "screenshots": [
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_e182b6b20bb797500f9f63c561586d920d44e37c.1920x1080.jpg",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_970a13f246e33e0df26d93baf9f8e975732adb4b.1920x1080.jpg",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_5f2f2ea498cdc632cbffd6cf37c1a09670eb3272.1920x1080.jpg"
+      ],
+      "downloadUrl": "https://archive.org/download/subnautica-v-71137/Subnautica-v71137.zip",
+      "size": 3899337467,
+      "executable": "Subnautica/Subnautica.exe",
+      "featured": true,
+      "rating": 4.9,
+      "tags": ["Survival", "Open World", "Underwater", "Crafting", "Adventure"]
     }
   ]
 }
