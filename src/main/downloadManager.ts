@@ -80,7 +80,25 @@ export class DownloadManager {
     };
 
     this.activeDownloads.set(game.id, task);
-    this.executeDownload(task, 0, game.downloadUrl, 0);
+
+    // If temp file is already completely downloaded on disk, proceed directly to installation
+    if (fs.existsSync(tempFilePath) && game.size && fs.statSync(tempFilePath).size >= game.size) {
+      task.item.downloadedBytes = game.size;
+      task.item.progressPercent = 99;
+      this.handleDownloadComplete(task);
+      return;
+    }
+
+    let offsetBytes = 0;
+    if (fs.existsSync(tempFilePath)) {
+      offsetBytes = fs.statSync(tempFilePath).size;
+      task.item.downloadedBytes = offsetBytes;
+      if (game.size && game.size > 0) {
+        task.item.progressPercent = Math.min(99, Math.round((offsetBytes / game.size) * 100));
+      }
+    }
+
+    this.executeDownload(task, offsetBytes, game.downloadUrl, 0);
   }
 
   public pauseDownload(gameId: string): void {
